@@ -7,7 +7,7 @@ class Calculator {
   clear() {
     this.currentOperand = "";
     this.previousOperand = "";
-    this.operation = undefined; // better to use null
+    this.operation = null; // better to use null vs undefined
   }
 
   delete() {
@@ -67,7 +67,9 @@ class Calculator {
         maximumFractionDigits: 0,
       });
     }
-    return decimalDigits != null ? `${integerDisplay}.${decimalDigits}` : integerDisplay;
+    return decimalDigits != null
+      ? `${integerDisplay}.${decimalDigits}`
+      : integerDisplay;
   }
 
   updateDisplay() {
